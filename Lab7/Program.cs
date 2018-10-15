@@ -11,9 +11,11 @@ namespace Lab7
     {
         static void Main(string[] args)
         {
+            //user continue loop
             bool cont = true;
             while (cont)
             {
+                //ask questions and grab methods passing strings enter by readlines.
                 Console.WriteLine("Please Give a Valid Name:");
                 GetNames(Console.ReadLine());
                 Console.WriteLine("Please Give a valid email address:");
@@ -32,6 +34,7 @@ namespace Lab7
 
         }
 
+        //get names first letter must be caps 1-30 in length
         static void GetNames(string name)
         {
 
@@ -44,6 +47,9 @@ namespace Lab7
                 Console.WriteLine("Sorry, not a valid name\n");
             }
         }
+
+        //email min 5 max 30 A-z or 0-9 then @ then min 5 max 10 A-z lower case then
+        //"." then 2min 3 max a-z lower
         static void GetEmail(string email)
         {
 
@@ -56,6 +62,7 @@ namespace Lab7
                 Console.WriteLine("Sorry, not a valid email\n");
             }
         }
+        //phone digits only 3 then - phone digits only 3 then -phone digits only 4
         static void GetPhone(string phone)
         {
 
@@ -69,6 +76,7 @@ namespace Lab7
             }
         }
 
+        //2 digits then / then 2 digits then / then 4 digits
         static void GetDate(string date)
         {
             if(Regex.IsMatch(date, @"^\d{2}\/\d{2}\/\d{4}$"))
@@ -80,6 +88,9 @@ namespace Lab7
                 Console.WriteLine("Sorry, not a valid date.\n");
             }
         }
+
+        //first < then lower case and digits next lose care then / and < then lower case 
+        //and digits
         static void GetTags(string elements)
         {
             if (Regex.IsMatch(elements, @"<[a-z0-9](.*?)>(.*?)<\/[a-z0-9]>"))
